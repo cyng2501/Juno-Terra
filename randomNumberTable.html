@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <style>
+        .containerdiv {
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #00004B;
+        }
+        
+        .generatebtn {
+            max-width: 200px;
+            background-color: #ffffff;
+            color: #C10000;
+            margin: 60px auto 40px;
+            display: block;
+            border: none;
+        }
+        
+        .generatebtn:hover {
+            background-color: #C10000;
+            color: #ffffff;
+            border: none;
+        }
+        
+        .table {
+            max-width: 400px;
+            height: 70vh;
+            min-height: 200px;
+            max-height: 400px;
+            text-align: center;
+            margin: auto;
+            color: #a80606;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .table-bordered {
+            border: none;
+        }
+        
+        .table td {
+            border-radius: 5px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        .table-bordered tr:first-child td {
+            border-top: none;
+        }
+        
+        .table-bordered tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .table-bordered tr td:first-child {
+            border-left: none;
+        }
+        
+        .table-bordered tr td:last-child {
+            border-right: none;
+        }
+        
+        .tdcolor {
+            background-color: #C10000;
+            color: #ffffff;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            randomnumbergenerate()
+        });
+
+        function randomnumbergenerate() {
+            $("td").each(function() {
+                var x = Math.floor((Math.random() * 50));
+                $(this).text(x);
+                if (x > 10) {
+                    $(this).addClass("tdcolor")
+                } else {
+                    $(this).removeClass("tdcolor")
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="col-xs-10 containerdiv">
+        <button class="btn generatebtn" onclick="randomnumbergenerate()">Generate Numbers</button>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
